@@ -1,46 +1,29 @@
-package com.demo_example.student_library_management_system.model;
+package com.demo_example.student_library_management_system.requestdto;
 
-import jakarta.persistence.*;
 
-@Entity
-@Table(name="Student")
-public class Student {
+import jakarta.persistence.Column;
 
-    @Id    //primary key
-    @Column(name="id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+public class StudentRequestDto {
 
-    @Column(name="name", nullable = false)
+    //RequestDto - Request data Transfer object - it is used to take input req fields.
+
     private String name;
 
-    @Column(name="mobile", nullable = false)
     private String mobile;
 
-    @Column(name="email", nullable = false, unique = true)
     private String email;
 
-    @Column(name="dept", nullable = false)
     private String dept;
 
-    @Column(name="sem", nullable = false)
     private String sem;
 
-    @Column(name="address", nullable = false)
     private String address;
 
-    @Column(name="dob", nullable = false)
     private String dob;
 
-    @Column(name="gender", nullable = false)
     private String gender;
 
-    @Column(name="section", nullable = false)
     private String section;
-
-
-    @OneToOne(mappedBy = "student1", cascade = CascadeType.ALL)
-    private Card card;
 
     public String getName() {
         return name;
@@ -48,14 +31,6 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getMobile() {
@@ -120,13 +95,5 @@ public class Student {
 
     public void setSection(String section) {
         this.section = section;
-    }
-
-    public Card getCard() {
-        return card;
-    }
-
-    public void setCard(Card card) {
-        this.card = card;
     }
 }
