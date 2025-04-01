@@ -9,7 +9,7 @@ public class StudentConverter {
 
     public static Student convertStudentRequestDtoIntoStudent(StudentRequestDto studentRequestDto){
         Student stu = new Student();
-        stu.setAddress(studentRequestDto.getAddress());
+        stu.setAddress(studentRequestDto.getAddress()) ;
         stu.setName(studentRequestDto.getName());
         stu.setDob(studentRequestDto.getDob());
         stu.setDept(studentRequestDto.getDept());
